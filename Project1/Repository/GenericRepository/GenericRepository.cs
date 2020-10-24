@@ -21,20 +21,20 @@ namespace Project1.Repository.GenericRepository
             dbSet.Add(entity);
         }
 
-        public virtual void DeleteByID(int id)
+        public virtual void DeleteByID(object id)
         {
             TEntity entityToDelete = dbSet.Find(id);
             dbSet.Remove(entityToDelete);
         }
 
-        public virtual IEnumerable<TEntity> Get()
+        public virtual async Task<IEnumerable<TEntity>> Get()
         {
-            return dbSet.ToList();
+            return await dbSet.ToListAsync();
         }
 
-        public virtual TEntity GetByID(int id)
+        public virtual async Task<TEntity> GetByID(object id)
         {
-            return dbSet.Find(id);
+            return await dbSet.FindAsync(id);
         }
 
         public virtual void Update(TEntity entityToUpdate)

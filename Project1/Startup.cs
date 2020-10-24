@@ -11,7 +11,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using Project1.AutoMapper;
+using Project1.DAL.Database;
+using Project1.Repository.UnitOfWork;
+using Project1.Services.UserService;
 
 namespace Project1
 {
@@ -20,6 +24,7 @@ namespace Project1
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            AutoMapperConfiguration.Config();
         }
 
         public IConfiguration Configuration { get; }
@@ -37,6 +42,23 @@ namespace Project1
 
             services.AddMvc();
             services.AddControllers();
+            services.AddSwaggerGen(c => {
+                c.SwaggerDoc("project", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Project I",
+                    Description = "SOICT",
+                    Contact = new OpenApiContact()
+                    {
+                        Name = "Dang Phu Khang",
+                        Email = "dangphukhang2742000@gmail.com"
+                    }
+                });
+            });
+            // services.AddMvc();
+            services.AddSingleton<DatabaseContext>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,6 +78,12 @@ namespace Project1
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/project/swagger.json", "My API V1");
             });
         }
     }

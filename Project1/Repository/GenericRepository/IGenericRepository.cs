@@ -7,11 +7,11 @@ namespace Project1.Repository.GenericRepository
 {
     public interface IGenericRepository<TEntity> where TEntity : class
     {
-        public IEnumerable<TEntity> Get();
-        public TEntity GetByID(int id);
+        Task<IEnumerable<TEntity>> Get();
+        Task<TEntity> GetByID(object id);
         public void Create(TEntity entity);
         public void Update(TEntity entityToUpdate);
-        public void DeleteByID(int id);
+        public void DeleteByID(object id);
 
     }
 }

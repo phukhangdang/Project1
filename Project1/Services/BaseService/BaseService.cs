@@ -20,35 +20,39 @@ namespace Project1.Services.BaseService
         {
             _unitOfWork = unitOfWork;
         }
-        public async Task<TDto> CreateAsync(TDto dto)
+        public virtual async Task<TDto> CreateAsync(TDto dto)
         {
             var entity = DtoToEntity(dto);
-
             _reponsitory.Create(entity);
-
             await _unitOfWork.SaveAsync();
-
             return EntityToDto(entity);
         }
 
-        public Task<TDto> UpdateAsync(TDto dto)
+        public virtual async Task<TDto> UpdateAsync(TDto dto)
         {
-            throw new NotImplementedException();
+            var entity = DtoToEntity(dto);
+            _reponsitory.Update(entity);
+            await _unitOfWork.SaveAsync();
+            return EntityToDto(entity);
         }
 
-        public Task DeleteAsync(object keyValues)
+        public virtual async Task DeleteAsync(object id)
         {
-            throw new NotImplementedException();
+            var entity = await _reponsitory.GetByID(id);
+            if (entity == null) throw new Exception("Not found entity object with id: " + id);
+            _reponsitory.DeleteByID(entity);
+            await _unitOfWork.SaveAsync();
         }
 
-        public Task<TDto> FindByIdAsync(object keyValues)
+        public virtual async Task<TDto> FindByIdAsync(object id)
         {
-            throw new NotImplementedException();
+            return EntityToDto(await _reponsitory.GetByID(id));
+
         }
 
-        public Task<TDto> Find()
+        public virtual async Task<IEnumerable<TDto>> Find()
         {
-            throw new NotImplementedException();
+            return EntityToDto(await _reponsitory.Get());
         }
         protected TDto EntityToDto(TEntity entity)
         {

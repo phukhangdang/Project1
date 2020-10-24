@@ -17,6 +17,6 @@ namespace Project1.Services.BaseService
 
         Task<TDto> FindByIdAsync(object keyValues);
 
-        Task<TDto> Find();
+        Task<IEnumerable<TDto>> Find();
     }
 }
