@@ -13,10 +13,10 @@ namespace Project1.DAL.Database
         {
         }
         public DbSet<User> Users { get; set; }
-        public DbSet<Role> UserRoles { get; set; }
-        public DbSet<Follow> Follows { get; set; }
         public DbSet<Status> Statuses { get; set; }
-        public DbSet<UserAccount> UserAccounts { get; set; }
+        public DbSet<Like> UserAccounts { get; set; }
+        public DbSet<Comment> UserRoles { get; set; }
+        public DbSet<Follow> Follows { get; set; }
         /*
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
