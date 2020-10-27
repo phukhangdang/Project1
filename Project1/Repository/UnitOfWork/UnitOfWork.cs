@@ -28,8 +28,8 @@ namespace Project1.Repository.UnitOfWork
         {
             UserRepository = new GenericRepository<User>(dbContext);
             StatusRepository = new GenericRepository<Status>(dbContext);
-            UserRoleRepository = new GenericRepository<Like>(dbContext);
-            AccountRepository = new GenericRepository<Comment>(dbContext);
+            LikeRepository = new GenericRepository<Like>(dbContext);
+            CommentRepository = new GenericRepository<Comment>(dbContext);
             FollowRepository = new GenericRepository<Follow>(dbContext);
         }
 
