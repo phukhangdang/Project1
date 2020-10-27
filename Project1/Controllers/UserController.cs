@@ -30,27 +30,30 @@ namespace Project1.Controllers
 
         // GET api/<UserController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<UserDto> Get(int id)
         {
-            return "value";
+            return await _userService.FindByIdAsync(id);
         }
 
         // POST api/<UserController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<UserDto> Post([FromBody] UserDto Dto)
         {
+            return await _userService.CreateAsync(Dto);
         }
 
         // PUT api/<UserController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public async Task<UserDto> Put([FromBody] UserDto Dto)
         {
+            return await _userService.UpdateAsync(Dto);
         }
 
         // DELETE api/<UserController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
+            await _userService.DeleteAsync(id);
         }
     }
 }

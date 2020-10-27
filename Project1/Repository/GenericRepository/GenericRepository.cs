@@ -13,8 +13,8 @@ namespace Project1.Repository.GenericRepository
         internal DbSet<TEntity> dbSet;
         public GenericRepository(DatabaseContext context)
         {
-            this.dbContext = context;
-            this.dbSet = context.Set<TEntity>();
+            dbContext = context;
+            dbSet = context.Set<TEntity>();
         }
         public virtual void Create(TEntity entity)
         {

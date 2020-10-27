@@ -56,7 +56,8 @@ namespace Project1
                 });
             });
             // services.AddMvc();
-            services.AddSingleton<DatabaseContext>();
+            services.AddDbContext<DatabaseContext>();
+            // services.AddSingleton<DatabaseContext>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IUserService, UserService>();
         }
