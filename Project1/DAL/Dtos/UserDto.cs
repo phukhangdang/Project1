@@ -18,5 +18,6 @@ namespace Project1.DAL.Dtos
         public IEnumerable<RoleDto> UserRole { get; set; }
         public IEnumerable<FollowDto> Follower { get; set; }
         public IEnumerable<StatusDto> Statuses { get; set; }
+        public IEnumerable<UserAccountDto> AccountDtos { get; set; }
     }
 }

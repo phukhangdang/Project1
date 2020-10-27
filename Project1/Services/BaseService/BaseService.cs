@@ -50,7 +50,7 @@ namespace Project1.Services.BaseService
 
         }
 
-        public virtual async Task<IEnumerable<TDto>> Find()
+        public virtual async Task<IEnumerable<TDto>> FindAsync()
         {
             return EntityToDto(await _reponsitory.Get());
         }

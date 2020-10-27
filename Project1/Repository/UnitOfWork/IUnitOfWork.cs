@@ -13,6 +13,7 @@ namespace Project1.Repository.UnitOfWork
         IGenericRepository<Role> UserRoleRepository { get; }
         IGenericRepository<Status> StatusRepository { get; }
         IGenericRepository<Follow> FollowRepository { get; }
+        IGenericRepository<UserAccount> AccountRepository { get; }
         Task SaveAsync();
     }
 }

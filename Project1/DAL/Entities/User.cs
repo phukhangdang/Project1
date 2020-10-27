@@ -17,5 +17,6 @@ namespace Project1.DAL.Entities
         public IEnumerable<Role> UserRole { get; set; }
         public IEnumerable<Follow> Follower { get; set; }
         public IEnumerable<Status> Statuses { get; set; }
+        public IEnumerable<UserAccount> Accounts { get; set; }
     }
 }

@@ -4,8 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Project1.DAL.Dtos;
-using Project1.DAL.Entities;
-using Project1.Services.UserService;
+using Project1.Services.FollowService;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -13,47 +12,47 @@ namespace Project1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class FollowController : ControllerBase
     {
-        private readonly IUserService _userService;
-        public UserController(IUserService userService)
+        private readonly IFollowService _followService;
+        public FollowController(IFollowService followService)
         {
-            _userService = userService;
+            _followService = followService;
         }
 
         // GET: api/<UserController>
         [HttpGet]
-        public async Task<IEnumerable<UserDto>> Get()
+        public async Task<IEnumerable<FollowDto>> Get()
         {
-            return await _userService.FindAsync();
+            return await _followService.FindAsync();
         }
 
         // GET api/<UserController>/5
         [HttpGet("{id}")]
-        public async Task<UserDto> Get(int id)
+        public async Task<FollowDto> Get(int id)
         {
-            return await _userService.FindByIdAsync(id);
+            return await _followService.FindByIdAsync(id);
         }
 
         // POST api/<UserController>
         [HttpPost]
-        public async Task<UserDto> Post([FromBody] UserDto Dto)
+        public async Task<FollowDto> Post([FromBody] FollowDto Dto)
         {
-            return await _userService.CreateAsync(Dto);
+            return await _followService.CreateAsync(Dto);
         }
 
         // PUT api/<UserController>/5
         [HttpPut]
-        public async Task<UserDto> Put([FromBody] UserDto Dto)
+        public async Task<FollowDto> Put([FromBody] FollowDto Dto)
         {
-            return await _userService.UpdateAsync(Dto);
+            return await _followService.UpdateAsync(Dto);
         }
 
         // DELETE api/<UserController>/5
         [HttpDelete("{id}")]
         public async Task Delete(int id)
         {
-            await _userService.DeleteAsync(id);
+            await _followService.DeleteAsync(id);
         }
     }
 }

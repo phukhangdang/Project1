@@ -112,6 +112,29 @@ namespace Project1.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("Project1.DAL.Entities.UserAccount", b =>
+                {
+                    b.Property<int>("UserAccountID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Account")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Passwork")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserID")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserAccountID");
+
+                    b.HasIndex("UserID");
+
+                    b.ToTable("UserAccount");
+                });
+
             modelBuilder.Entity("Project1.DAL.Entities.Follow", b =>
                 {
                     b.HasOne("Project1.DAL.Entities.User", null)
@@ -134,6 +157,15 @@ namespace Project1.Migrations
                 {
                     b.HasOne("Project1.DAL.Entities.User", null)
                         .WithMany("Statuses")
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Project1.DAL.Entities.UserAccount", b =>
+                {
+                    b.HasOne("Project1.DAL.Entities.User", null)
+                        .WithMany("Accounts")
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

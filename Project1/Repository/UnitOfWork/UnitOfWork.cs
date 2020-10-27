@@ -18,6 +18,7 @@ namespace Project1.Repository.UnitOfWork
         public IGenericRepository<Status> StatusRepository { get; private set; }
 
         public IGenericRepository<Follow> FollowRepository { get; private set; }
+        public IGenericRepository<UserAccount> AccountRepository { get; private set; }
 
         public UnitOfWork(DatabaseContext context)
         {

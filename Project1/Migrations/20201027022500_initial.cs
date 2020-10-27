@@ -67,6 +67,27 @@ namespace Project1.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "UserAccount",
+                columns: table => new
+                {
+                    UserAccountID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserID = table.Column<int>(nullable: false),
+                    Account = table.Column<string>(nullable: true),
+                    Passwork = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserAccount", x => x.UserAccountID);
+                    table.ForeignKey(
+                        name: "FK_UserAccount_Users_UserID",
+                        column: x => x.UserID,
+                        principalTable: "Users",
+                        principalColumn: "UserID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "UserRoles",
                 columns: table => new
                 {
@@ -97,6 +118,11 @@ namespace Project1.Migrations
                 column: "UserID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_UserAccount_UserID",
+                table: "UserAccount",
+                column: "UserID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_UserRoles_UserID",
                 table: "UserRoles",
                 column: "UserID");
@@ -109,6 +135,9 @@ namespace Project1.Migrations
 
             migrationBuilder.DropTable(
                 name: "Statuses");
+
+            migrationBuilder.DropTable(
+                name: "UserAccount");
 
             migrationBuilder.DropTable(
                 name: "UserRoles");
