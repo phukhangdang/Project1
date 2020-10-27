@@ -27,9 +27,11 @@ namespace Project1.Repository.GenericRepository
             dbSet.Remove(entityToDelete);
         }
 
-        public virtual async Task<IEnumerable<TEntity>> Get()
+        public virtual async Task<IEnumerable<TEntity>> Get(int pageNum, int pageSize)
         {
-            return await dbSet.ToListAsync();
+            var entity = from e in dbSet.Skip(pageNum * pageSize).Take(pageSize)
+                         select e;
+            return entity;
         }
 
         public virtual async Task<TEntity> GetByID(object id)

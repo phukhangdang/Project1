@@ -17,6 +17,6 @@ namespace Project1.Services.BaseService
 
         Task<TDto> FindByIdAsync(object keyValues);
 
-        Task<IEnumerable<TDto>> FindAsync();
+        Task<IEnumerable<TDto>> FindAsync(int pageNum, int pageSize);
     }
 }

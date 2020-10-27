@@ -21,9 +21,9 @@ namespace Project1.Controllers
         }
         // GET: api/<RoleController>
         [HttpGet]
-        public async Task<IEnumerable<RoleDto>> Get()
+        public async Task<IEnumerable<RoleDto>> Get(int pageNum, int pageSize)
         {
-            return await _roleService.FindAsync();
+            return await _roleService.FindAsync(pageNum, pageSize);
         }
 
         // GET api/<RoleController>/5

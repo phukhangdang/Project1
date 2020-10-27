@@ -50,9 +50,9 @@ namespace Project1.Services.BaseService
 
         }
 
-        public virtual async Task<IEnumerable<TDto>> FindAsync()
+        public virtual async Task<IEnumerable<TDto>> FindAsync(int pageNum, int pageSize)
         {
-            return EntityToDto(await _reponsitory.Get());
+            return EntityToDto(await _reponsitory.Get(pageNum, pageSize));
         }
         protected TDto EntityToDto(TEntity entity)
         {

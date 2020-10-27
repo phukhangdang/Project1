@@ -7,7 +7,7 @@ namespace Project1.Repository.GenericRepository
 {
     public interface IGenericRepository<TEntity> where TEntity : class
     {
-        Task<IEnumerable<TEntity>> Get();
+        Task<IEnumerable<TEntity>> Get(int pageNum, int pageSize);
         Task<TEntity> GetByID(object id);
         public void Create(TEntity entity);
         public void Update(TEntity entityToUpdate);

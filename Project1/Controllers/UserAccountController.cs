@@ -21,9 +21,9 @@ namespace Project1.Controllers
         }
         // GET: api/<UserAccountController>
         [HttpGet]
-        public async Task<IEnumerable<UserAccountDto>> Get()
+        public async Task<IEnumerable<UserAccountDto>> Get(int pageNum, int pageSize)
         {
-            return await _userAccountService.FindAsync();
+            return await _userAccountService.FindAsync(pageNum, pageSize);
         }
 
         // GET api/<UserAccountController>/5

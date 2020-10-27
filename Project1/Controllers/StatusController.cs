@@ -21,9 +21,9 @@ namespace Project1.Controllers
         }
         // GET: api/<StatusController>
         [HttpGet]
-        public async Task<IEnumerable<StatusDto>> Get()
+        public async Task<IEnumerable<StatusDto>> Get(int pageNum, int pageSize)
         {
-            return await _statusService.FindAsync();
+            return await _statusService.FindAsync(pageNum, pageSize);
         }
 
         // GET api/<StatusController>/5

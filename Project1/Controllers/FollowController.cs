@@ -22,9 +22,9 @@ namespace Project1.Controllers
 
         // GET: api/<UserController>
         [HttpGet]
-        public async Task<IEnumerable<FollowDto>> Get()
+        public async Task<IEnumerable<FollowDto>> Get(int pageNum, int pageSize)
         {
-            return await _followService.FindAsync();
+            return await _followService.FindAsync(pageNum, pageSize);
         }
 
         // GET api/<UserController>/5
