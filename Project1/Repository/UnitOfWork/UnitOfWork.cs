@@ -18,6 +18,7 @@ namespace Project1.Repository.UnitOfWork
         public IGenericRepository<Status> StatusRepository { get; private set; }
 
         public IGenericRepository<Follow> FollowRepository { get; private set; }
+
         public IGenericRepository<UserAccount> AccountRepository { get; private set; }
 
         public UnitOfWork(DatabaseContext context)
@@ -31,6 +32,7 @@ namespace Project1.Repository.UnitOfWork
             UserRoleRepository = new GenericRepository<Role>(dbContext);
             StatusRepository = new GenericRepository<Status>(dbContext);
             FollowRepository = new GenericRepository<Follow>(dbContext);
+            AccountRepository = new GenericRepository<UserAccount>(dbContext);
         }
 
         public async Task SaveAsync()

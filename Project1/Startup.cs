@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -56,14 +57,15 @@ namespace Project1
                 });
             });
             // services.AddMvc();
-            services.AddDbContext<DatabaseContext>();
+            services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(
+                Configuration.GetConnectionString("DefaultConnection")));
             // services.AddSingleton<DatabaseContext>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DatabaseContext context)
         {
             if (env.IsDevelopment())
             {
@@ -86,6 +88,8 @@ namespace Project1
             {
                 c.SwaggerEndpoint("/swagger/project/swagger.json", "My API V1");
             });
+
+            DbInitializer.Initialize(context);
         }
     }
 }

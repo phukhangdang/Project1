@@ -17,12 +17,14 @@ namespace Project1.AutoMapper
             CreateMap<Status, StatusDto>();
             CreateMap<Role, RoleDto>();
             CreateMap<Follow, FollowDto>();
+            CreateMap<UserAccount, UserAccountDto>();
 
             //Dto to Entity
             CreateMap<UserDto, User>();
             CreateMap<StatusDto, Status>();
             CreateMap<RoleDto, Role>();
             CreateMap<FollowDto, Follow>();
+            CreateMap<UserAccountDto, UserAccount>();
 
         }
     }
