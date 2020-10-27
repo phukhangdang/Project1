@@ -5,12 +5,11 @@ using System.Threading.Tasks;
 
 namespace Project1.DAL.Dtos
 {
-    public class UserAccountDto
+    public class CommentDto
     {
         public int ID { get; set; }
+        public int StatusID { get; set; }
         public int UserID { get; set; }
-        public string Account { get; set; }
-        public string Password { get; set; }
-
+        public DateTime Time { get; set; }
     }
 }

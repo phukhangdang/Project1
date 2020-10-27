@@ -8,13 +8,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Project1.Services.RoleService
+namespace Project1.Services.LikeService
 {
-    public class RoleService : BaseService<Role, RoleDto>, IRoleService
+    public class LikeService : BaseService<Like, LikeDto>, ILikeService
     {
-        public RoleService(IUnitOfWork unitOfWork) : base(unitOfWork)
+        public LikeService(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
         }
-        protected override IGenericRepository<Role> _reponsitory => _unitOfWork.UserRoleRepository;
+        protected override IGenericRepository<Like> _reponsitory => _unitOfWork.LikeRepository;
     }
 }

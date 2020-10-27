@@ -15,16 +15,16 @@ namespace Project1.AutoMapper
             // Entity to Dto
             CreateMap<User, UserDto>();
             CreateMap<Status, StatusDto>();
-            CreateMap<Role, RoleDto>();
+            CreateMap<Like, LikeDto>();
             CreateMap<Follow, FollowDto>();
-            CreateMap<UserAccount, UserAccountDto>();
+            CreateMap<Comment, CommentDto>();
 
             //Dto to Entity
             CreateMap<UserDto, User>();
             CreateMap<StatusDto, Status>();
-            CreateMap<RoleDto, Role>();
+            CreateMap<LikeDto, Like>();
             CreateMap<FollowDto, Follow>();
-            CreateMap<UserAccountDto, UserAccount>();
+            CreateMap<CommentDto, Comment>();
 
         }
     }

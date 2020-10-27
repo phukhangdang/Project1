@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Project1.Services.UserAccountService
+namespace Project1.Services.LikeService
 {
-    public interface IUserAccountService : IBaseService<UserAccount, UserAccountDto>
+    public interface ILikeService : IBaseService<Like, LikeDto>
     {
     }
 }

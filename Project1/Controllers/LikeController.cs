@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Project1.DAL.Dtos;
-using Project1.Services.RoleService;
+using Project1.Services.LikeService;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,46 +12,46 @@ namespace Project1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RoleController : ControllerBase
+    public class LikeController : ControllerBase
     {
-        private readonly IRoleService _roleService;
-        public RoleController(IRoleService roleService)
+        private readonly ILikeService _likeService;
+        public LikeController(ILikeService likeService)
         {
-            _roleService = roleService;
+            _likeService = likeService;
         }
         // GET: api/<RoleController>
         [HttpGet]
-        public async Task<IEnumerable<RoleDto>> Get(int pageNum, int pageSize)
+        public async Task<IEnumerable<LikeDto>> Get(int pageNum, int pageSize)
         {
-            return await _roleService.FindAsync(pageNum, pageSize);
+            return await _likeService.FindAsync(pageNum, pageSize);
         }
 
         // GET api/<RoleController>/5
         [HttpGet("{id}")]
-        public async Task<RoleDto> Get(int id)
+        public async Task<LikeDto> Get(int id)
         {
-            return await _roleService.FindByIdAsync(id);
+            return await _likeService.FindByIdAsync(id);
         }
 
         // POST api/<RoleController>
         [HttpPost]
-        public async Task<RoleDto> Post([FromBody] RoleDto Dto)
+        public async Task<LikeDto> Post([FromBody] LikeDto Dto)
         {
-            return await _roleService.CreateAsync(Dto);
+            return await _likeService.CreateAsync(Dto);
         }
 
         // PUT api/<RoleController>/5
         [HttpPut]
-        public async Task<RoleDto> Put([FromBody] RoleDto Dto)
+        public async Task<LikeDto> Put([FromBody] LikeDto Dto)
         {
-            return await _roleService.UpdateAsync(Dto);
+            return await _likeService.UpdateAsync(Dto);
         }
 
         // DELETE api/<RoleController>/5
         [HttpDelete("{id}")]
         public async Task Delete(int id)
         {
-            await _roleService.DeleteAsync(id);
+            await _likeService.DeleteAsync(id);
         }
     }
 }

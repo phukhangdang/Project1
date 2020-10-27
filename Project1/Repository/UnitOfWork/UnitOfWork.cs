@@ -12,14 +12,12 @@ namespace Project1.Repository.UnitOfWork
     {
         internal DatabaseContext dbContext;
         public IGenericRepository<User> UserRepository { get; private set; }
-
-        public IGenericRepository<Role> UserRoleRepository { get; private set; }
-
         public IGenericRepository<Status> StatusRepository { get; private set; }
-
+        public IGenericRepository<Like> LikeRepository { get; private set; }
+        public IGenericRepository<Comment> CommentRepository { get; private set; }
         public IGenericRepository<Follow> FollowRepository { get; private set; }
 
-        public IGenericRepository<UserAccount> AccountRepository { get; private set; }
+        
 
         public UnitOfWork(DatabaseContext context)
         {
@@ -29,10 +27,10 @@ namespace Project1.Repository.UnitOfWork
         private void InitRepositories()
         {
             UserRepository = new GenericRepository<User>(dbContext);
-            UserRoleRepository = new GenericRepository<Role>(dbContext);
             StatusRepository = new GenericRepository<Status>(dbContext);
+            UserRoleRepository = new GenericRepository<Like>(dbContext);
+            AccountRepository = new GenericRepository<Comment>(dbContext);
             FollowRepository = new GenericRepository<Follow>(dbContext);
-            AccountRepository = new GenericRepository<UserAccount>(dbContext);
         }
 
         public async Task SaveAsync()

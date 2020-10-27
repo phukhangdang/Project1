@@ -10,6 +10,7 @@ namespace Project1.DAL.Entities
         public int ID { get; set;}
         public int UserID { get; set; }
         public int FollowerID { get; set; }
+        public DateTime Time { get; set; }
 
     }
 }

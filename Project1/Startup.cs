@@ -16,6 +16,10 @@ using Microsoft.OpenApi.Models;
 using Project1.AutoMapper;
 using Project1.DAL.Database;
 using Project1.Repository.UnitOfWork;
+using Project1.Services.CommentService;
+using Project1.Services.FollowService;
+using Project1.Services.LikeService;
+using Project1.Services.StatusService;
 using Project1.Services.UserService;
 
 namespace Project1
@@ -62,6 +66,10 @@ namespace Project1
             // services.AddSingleton<DatabaseContext>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IStatusService, StatusService>();
+            services.AddScoped<ILikeService, LikeService>();
+            services.AddScoped<ICommentService, CommentService>();
+            services.AddScoped<IFollowService, FollowService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

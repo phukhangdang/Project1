@@ -9,7 +9,8 @@ namespace Project1.DAL.Dtos
     {
         public int ID { get; set; }
         public int UserID { get; set; }
-        public int Like { get; set; }
-        public int Comment { get; set; }
+        public DateTime Time { get; set; }
+        public IEnumerable<LikeDto> Likes { get; set; }
+        public IEnumerable<CommentDto> Comments { get; set; }
     }
 }

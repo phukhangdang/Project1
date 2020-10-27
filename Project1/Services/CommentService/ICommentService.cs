@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Project1.Services.RoleService
+namespace Project1.Services.CommentService
 {
-    public interface IRoleService : IBaseService<Role, RoleDto>
+    public interface ICommentService : IBaseService<Comment, CommentDto>
     {
     }
 }
