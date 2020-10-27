@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,6 +11,7 @@ namespace Project1.DAL.Entities
         public int UserID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        [MaxLength(10)]
         public string NickName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string Contact { get; set; }

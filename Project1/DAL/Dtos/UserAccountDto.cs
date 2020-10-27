@@ -7,7 +7,7 @@ namespace Project1.DAL.Dtos
 {
     public class UserAccountDto
     {
-        public int UserAccountID { get; set; }
+        public int ID { get; set; }
         public int UserID { get; set; }
         public string Account { get; set; }
         public string Password { get; set; }
