@@ -15,7 +15,11 @@ namespace Project1.DAL.Entities
         public DateTime DateOfBirth { get; set; }
         public string Contact { get; set; }
         public string Address { get; set; }
+        public string Account { get; set; }
+        public string Password { get; set; }
+        public string Role { get; set; }
         public IEnumerable<Follow> Followers { get; set; }
         public IEnumerable<Status> Statuses { get; set; }
+
     }
 }

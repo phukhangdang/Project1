@@ -12,5 +12,6 @@ namespace Project1.DAL.Dtos
         public DateTime Time { get; set; }
         public IEnumerable<LikeDto> Likes { get; set; }
         public IEnumerable<CommentDto> Comments { get; set; }
+
     }
 }

@@ -12,5 +12,6 @@ namespace Project1.DAL.Entities
         public DateTime Time { get; set; }
         public IEnumerable<Like> Likes { get; set; }
         public IEnumerable<Comment> Comments { get; set; }
+
     }
 }

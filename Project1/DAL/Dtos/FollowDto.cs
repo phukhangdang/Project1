@@ -11,5 +11,6 @@ namespace Project1.DAL.Dtos
         public int UserID { get; set; }
         public int FollowerID { get; set; }
         public DateTime Time { get; set; }
+
     }
 }

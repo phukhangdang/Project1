@@ -16,7 +16,11 @@ namespace Project1.DAL.Dtos
         public DateTime DateOfBirth { get; set; }
         public string Contact { get; set; }
         public string Address { get; set; }
+        public string Account { get; set; }
+        public string Password { get; set; }
+        public string Role { get; set; }
         public IEnumerable<FollowDto> Followers { get; set; }
         public IEnumerable<StatusDto> Statuses { get; set; }
+
     }
 }

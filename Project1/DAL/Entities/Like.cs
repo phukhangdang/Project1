@@ -11,5 +11,6 @@ namespace Project1.DAL.Entities
         public int StatusID { get; set; }
         public int UserID { get; set; }
         public DateTime Time { get; set; }
+
     }
 }
