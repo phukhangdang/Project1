@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Project1.Services.StatusService
 {
-    public interface IStatusService : IBaseService<Status, StatusDto>
+    public interface IStatusService : IBaseService<Post, PostDto>
     {
     }
 }

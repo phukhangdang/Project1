@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace Project1.Services.FollowService
 {
-    public class FollowService : BaseService<Follow, FollowDto>, IFollowService
+    public class FollowService : BaseService<FollowingRelationship, FollowingRelationshipDto>, IFollowService
     {
         public FollowService(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
         }
-        protected override IGenericRepository<Follow> _reponsitory => _unitOfWork.FollowRepository;
+        protected override IGenericRepository<FollowingRelationship> _reponsitory => _unitOfWork.FollowRepository;
     }
 }

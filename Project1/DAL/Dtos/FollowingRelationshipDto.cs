@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Project1.DAL.Entities
+namespace Project1.DAL.Dtos
 {
-    public class Follow
+    public class FollowingRelationshipDto
     {
-        public int ID { get; set;}
+        public int FollowingRelationshipDtoID { get; set; }
         public int UserID { get; set; }
         public int FollowerID { get; set; }
-        public DateTime Time { get; set; }
+        public DateTime DateFollowed { get; set; }
 
     }
 }

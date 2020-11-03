@@ -21,28 +21,28 @@ namespace Project1.Controllers
         }
         // GET: api/<UserAccountController>
         [HttpGet]
-        public async Task<IEnumerable<CommentDto>> Get(int pageNum, int pageSize)
+        public async Task<IEnumerable<PostCommentDto>> Get(int pageNum, int pageSize)
         {
             return await _commentService.FindAsync(pageNum, pageSize);
         }
 
         // GET api/<UserAccountController>/5
         [HttpGet("{id}")]
-        public async Task<CommentDto> Get(int id)
+        public async Task<PostCommentDto> Get(int id)
         {
             return await _commentService.FindByIdAsync(id);
         }
 
         // POST api/<UserAccountController>
         [HttpPost]
-        public async Task<CommentDto> Post([FromBody] CommentDto Dto)
+        public async Task<PostCommentDto> Post([FromBody] PostCommentDto Dto)
         {
             return await _commentService.CreateAsync(Dto);
         }
 
         // PUT api/<UserAccountController>/5
         [HttpPut]
-        public async Task<CommentDto> Put([FromBody] CommentDto Dto)
+        public async Task<PostCommentDto> Put([FromBody] PostCommentDto Dto)
         {
             return await _commentService.UpdateAsync(Dto);
         }

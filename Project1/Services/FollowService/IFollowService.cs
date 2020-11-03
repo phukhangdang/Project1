@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Project1.Services.FollowService
 {
-    public interface IFollowService : IBaseService<Follow, FollowDto>
+    public interface IFollowService : IBaseService<FollowingRelationship, FollowingRelationshipDto>
     {
     }
 }

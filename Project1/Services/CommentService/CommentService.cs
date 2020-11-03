@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 
 namespace Project1.Services.CommentService
 {
-    public class CommentService : BaseService<Comment, CommentDto>, ICommentService
+    public class CommentService : BaseService<PostComment, PostCommentDto>, ICommentService
     {
         public CommentService(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
         }
 
-        protected override IGenericRepository<Comment> _reponsitory => _unitOfWork.CommentRepository;
+        protected override IGenericRepository<PostComment> _reponsitory => _unitOfWork.CommentRepository;
     }
 }

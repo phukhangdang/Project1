@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 
 namespace Project1.Services.StatusService
 {
-    public class StatusService : BaseService<Status, StatusDto>, IStatusService
+    public class StatusService : BaseService<Post, PostDto>, IStatusService
     {
         public StatusService(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
         }
 
-        protected override IGenericRepository<Status> _reponsitory => _unitOfWork.StatusRepository;
+        protected override IGenericRepository<Post> _reponsitory => _unitOfWork.StatusRepository;
     }
 }

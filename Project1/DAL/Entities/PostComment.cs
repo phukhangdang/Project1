@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace Project1.DAL.Entities
 {
-    public class Comment
+    public class PostComment
     {
-        public int ID { get; set; }
-        public int StatusID { get; set; }
+        public int PostCommentID { get; set; }
+        public int PostID { get; set; }
         public int UserID { get; set; }
-        public DateTime Time { get; set; }
+        public DateTime DateCommented { get; set; }
 
     }
 }

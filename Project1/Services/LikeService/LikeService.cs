@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace Project1.Services.LikeService
 {
-    public class LikeService : BaseService<Like, LikeDto>, ILikeService
+    public class LikeService : BaseService<PostLike, PostLikeDto>, ILikeService
     {
         public LikeService(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
         }
-        protected override IGenericRepository<Like> _reponsitory => _unitOfWork.LikeRepository;
+        protected override IGenericRepository<PostLike> _reponsitory => _unitOfWork.LikeRepository;
     }
 }

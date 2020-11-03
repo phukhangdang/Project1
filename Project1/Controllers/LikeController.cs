@@ -21,28 +21,28 @@ namespace Project1.Controllers
         }
         // GET: api/<RoleController>
         [HttpGet]
-        public async Task<IEnumerable<LikeDto>> Get(int pageNum, int pageSize)
+        public async Task<IEnumerable<PostLikeDto>> Get(int pageNum, int pageSize)
         {
             return await _likeService.FindAsync(pageNum, pageSize);
         }
 
         // GET api/<RoleController>/5
         [HttpGet("{id}")]
-        public async Task<LikeDto> Get(int id)
+        public async Task<PostLikeDto> Get(int id)
         {
             return await _likeService.FindByIdAsync(id);
         }
 
         // POST api/<RoleController>
         [HttpPost]
-        public async Task<LikeDto> Post([FromBody] LikeDto Dto)
+        public async Task<PostLikeDto> Post([FromBody] PostLikeDto Dto)
         {
             return await _likeService.CreateAsync(Dto);
         }
 
         // PUT api/<RoleController>/5
         [HttpPut]
-        public async Task<LikeDto> Put([FromBody] LikeDto Dto)
+        public async Task<PostLikeDto> Put([FromBody] PostLikeDto Dto)
         {
             return await _likeService.UpdateAsync(Dto);
         }

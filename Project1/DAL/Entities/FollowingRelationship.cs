@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace Project1.DAL.Entities
 {
-    public class Like
+    public class FollowingRelationship
     {
-        public int ID { get; set; }
-        public int StatusID { get; set; }
+        public int FollowingRelationshipID { get; set;}
         public int UserID { get; set; }
-        public DateTime Time { get; set; }
+        public int FollowerID { get; set; }
+        public DateTime DateFollowed { get; set; }
 
     }
 }

@@ -22,28 +22,28 @@ namespace Project1.Controllers
 
         // GET: api/<UserController>
         [HttpGet]
-        public async Task<IEnumerable<FollowDto>> Get(int pageNum, int pageSize)
+        public async Task<IEnumerable<FollowingRelationshipDto>> Get(int pageNum, int pageSize)
         {
             return await _followService.FindAsync(pageNum, pageSize);
         }
 
         // GET api/<UserController>/5
         [HttpGet("{id}")]
-        public async Task<FollowDto> Get(int id)
+        public async Task<FollowingRelationshipDto> Get(int id)
         {
             return await _followService.FindByIdAsync(id);
         }
 
         // POST api/<UserController>
         [HttpPost]
-        public async Task<FollowDto> Post([FromBody] FollowDto Dto)
+        public async Task<FollowingRelationshipDto> Post([FromBody] FollowingRelationshipDto Dto)
         {
             return await _followService.CreateAsync(Dto);
         }
 
         // PUT api/<UserController>/5
         [HttpPut]
-        public async Task<FollowDto> Put([FromBody] FollowDto Dto)
+        public async Task<FollowingRelationshipDto> Put([FromBody] FollowingRelationshipDto Dto)
         {
             return await _followService.UpdateAsync(Dto);
         }

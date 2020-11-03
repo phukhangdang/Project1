@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace Project1.DAL.Dtos
 {
-    public class FollowDto
+    public class PostCommentDto
     {
-        public int ID { get; set; }
+        public int PostCommentDtoID { get; set; }
+        public int PostID { get; set; }
         public int UserID { get; set; }
-        public int FollowerID { get; set; }
-        public DateTime Time { get; set; }
+        public DateTime DateCommented { get; set; }
 
     }
 }

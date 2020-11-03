@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Project1.Services.LikeService
 {
-    public interface ILikeService : IBaseService<Like, LikeDto>
+    public interface ILikeService : IBaseService<PostLike, PostLikeDto>
     {
     }
 }

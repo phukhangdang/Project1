@@ -13,10 +13,13 @@ namespace Project1.DAL.Database
         {
         }
         public DbSet<User> Users { get; set; }
-        public DbSet<Status> Statuses { get; set; }
-        public DbSet<Like> UserAccounts { get; set; }
-        public DbSet<Comment> UserRoles { get; set; }
-        public DbSet<Follow> Follows { get; set; }
+        public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<PostLike> PostLikes { get; set; }
+        public DbSet<PostComment> PostComments { get; set; }
+        public DbSet<PostCategory> PostCategories { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<FollowingRelationship> FollowingRelationships { get; set; }
         /*
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

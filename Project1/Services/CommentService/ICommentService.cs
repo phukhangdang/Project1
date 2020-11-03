@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Project1.Services.CommentService
 {
-    public interface ICommentService : IBaseService<Comment, CommentDto>
+    public interface ICommentService : IBaseService<PostComment, PostCommentDto>
     {
     }
 }

@@ -21,28 +21,28 @@ namespace Project1.Controllers
         }
         // GET: api/<StatusController>
         [HttpGet]
-        public async Task<IEnumerable<StatusDto>> Get(int pageNum, int pageSize)
+        public async Task<IEnumerable<PostDto>> Get(int pageNum, int pageSize)
         {
             return await _statusService.FindAsync(pageNum, pageSize);
         }
 
         // GET api/<StatusController>/5
         [HttpGet("{id}")]
-        public async Task<StatusDto> Get(int id)
+        public async Task<PostDto> Get(int id)
         {
             return await _statusService.FindByIdAsync(id);
         }
 
         // POST api/<StatusController>
         [HttpPost]
-        public async Task<StatusDto> Post([FromBody] StatusDto Dto)
+        public async Task<PostDto> Post([FromBody] PostDto Dto)
         {
             return await _statusService.CreateAsync(Dto);
         }
 
         // PUT api/<StatusController>/5
         [HttpPut]
-        public async Task<StatusDto> Put([FromBody] StatusDto Dto)
+        public async Task<PostDto> Put([FromBody] PostDto Dto)
         {
             return await _statusService.UpdateAsync(Dto);
         }
