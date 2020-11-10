@@ -8,13 +8,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Project1.Services.LikeService
+namespace Project1.Services.PostService
 {
-    public class LikeService : BaseService<PostLike, PostLikeDto>, ILikeService
+    public class PostService : BaseService<Post, PostDto>, IPostService
     {
-        public LikeService(IUnitOfWork unitOfWork) : base(unitOfWork)
+        public PostService(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
         }
-        protected override IGenericRepository<PostLike> _reponsitory => _unitOfWork.LikeRepository;
+
+        protected override IGenericRepository<Post> _reponsitory => _unitOfWork.PostRepository;
     }
 }

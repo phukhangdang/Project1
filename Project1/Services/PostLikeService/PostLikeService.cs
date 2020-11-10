@@ -8,14 +8,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Project1.Services.StatusService
+namespace Project1.Services.PostLikeService
 {
-    public class StatusService : BaseService<Post, PostDto>, IStatusService
+    public class PostLikeService : BaseService<PostLike, PostLikeDto>, IPostLikeService
     {
-        public StatusService(IUnitOfWork unitOfWork) : base(unitOfWork)
+        public PostLikeService(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
         }
-
-        protected override IGenericRepository<Post> _reponsitory => _unitOfWork.StatusRepository;
+        protected override IGenericRepository<PostLike> _reponsitory => _unitOfWork.PostLikeRepository;
     }
 }

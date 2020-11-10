@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Project1.Services.FollowService
+namespace Project1.Services.PostService
 {
-    public interface IFollowService : IBaseService<FollowingRelationship, FollowingRelationshipDto>
+    public interface IPostService : IBaseService<Post, PostDto>
     {
     }
 }

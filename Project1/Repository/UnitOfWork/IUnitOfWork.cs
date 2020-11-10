@@ -10,10 +10,13 @@ namespace Project1.Repository.UnitOfWork
     public interface IUnitOfWork
     {
         IGenericRepository<User> UserRepository { get; }
-        IGenericRepository<Post> StatusRepository { get; }
-        IGenericRepository<PostLike> LikeRepository { get; }
-        IGenericRepository<PostComment> CommentRepository { get; }
-        IGenericRepository<FollowingRelationship> FollowRepository { get; }
+        IGenericRepository<Post> PostRepository { get; }
+        IGenericRepository<PostLike> PostLikeRepository { get; }
+        IGenericRepository<PostComment> PostCommentRepository { get; }
+        IGenericRepository<FollowingRelationship> FollowingRelationshipRepository { get; }
+        IGenericRepository<UserProfile> UserProfileRepository { get; }
+        IGenericRepository<PostCategory> PostCategoryRepository { get; }
+        IGenericRepository<Category> CategoryRepository { get; }
         Task SaveAsync();
     }
 }

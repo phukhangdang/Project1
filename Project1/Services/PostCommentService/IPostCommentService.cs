@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Project1.Services.LikeService
+namespace Project1.Services.PostCommentService
 {
-    public interface ILikeService : IBaseService<PostLike, PostLikeDto>
+    public interface IPostCommentService : IBaseService<PostComment, PostCommentDto>
     {
     }
 }

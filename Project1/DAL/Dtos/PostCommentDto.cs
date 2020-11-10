@@ -10,6 +10,7 @@ namespace Project1.DAL.Dtos
         public int PostCommentDtoID { get; set; }
         public int PostID { get; set; }
         public int UserID { get; set; }
+        public string FilePath { get; set; }
         public DateTime DateCommented { get; set; }
 
     }

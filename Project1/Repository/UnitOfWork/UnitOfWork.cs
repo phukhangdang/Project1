@@ -12,12 +12,15 @@ namespace Project1.Repository.UnitOfWork
     {
         internal DatabaseContext dbContext;
         public IGenericRepository<User> UserRepository { get; private set; }
-        public IGenericRepository<Post> StatusRepository { get; private set; }
-        public IGenericRepository<PostLike> LikeRepository { get; private set; }
-        public IGenericRepository<PostComment> CommentRepository { get; private set; }
-        public IGenericRepository<FollowingRelationship> FollowRepository { get; private set; }
+        public IGenericRepository<Post> PostRepository { get; private set; }
+        public IGenericRepository<PostLike> PostLikeRepository { get; private set; }
+        public IGenericRepository<PostComment> PostCommentRepository { get; private set; }
+        public IGenericRepository<FollowingRelationship> FollowingRelationshipRepository { get; private set; }
+        public IGenericRepository<UserProfile> UserProfileRepository { get; private set; }
+        public IGenericRepository<PostCategory> PostCategoryRepository { get; private set; }
+        public IGenericRepository<Category> CategoryRepository { get; private set; }
 
-        
+
 
         public UnitOfWork(DatabaseContext context)
         {
@@ -27,10 +30,13 @@ namespace Project1.Repository.UnitOfWork
         private void InitRepositories()
         {
             UserRepository = new GenericRepository<User>(dbContext);
-            StatusRepository = new GenericRepository<Post>(dbContext);
-            LikeRepository = new GenericRepository<PostLike>(dbContext);
-            CommentRepository = new GenericRepository<PostComment>(dbContext);
-            FollowRepository = new GenericRepository<FollowingRelationship>(dbContext);
+            PostRepository = new GenericRepository<Post>(dbContext);
+            PostLikeRepository = new GenericRepository<PostLike>(dbContext);
+            PostCommentRepository = new GenericRepository<PostComment>(dbContext);
+            FollowingRelationshipRepository = new GenericRepository<FollowingRelationship>(dbContext);
+            UserProfileRepository = new GenericRepository<UserProfile>(dbContext);
+            PostCategoryRepository = new GenericRepository<PostCategory>(dbContext);
+            CategoryRepository = new GenericRepository<Category>(dbContext);
         }
 
         public async Task SaveAsync()

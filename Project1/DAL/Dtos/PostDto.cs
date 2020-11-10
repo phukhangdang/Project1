@@ -10,6 +10,7 @@ namespace Project1.DAL.Dtos
         public int PostDtoID { get; set; }
         public int UserID { get; set; }
         public string Title { get; set; }
+        public string FilePath { get; set; }
         public DateTime DatePublished { get; set; }
         public IEnumerable<PostLikeDto> PostLikes { get; set; }
         public IEnumerable<PostCommentDto> PostComments { get; set; }

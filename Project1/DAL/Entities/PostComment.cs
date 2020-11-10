@@ -10,6 +10,7 @@ namespace Project1.DAL.Entities
         public int PostCommentID { get; set; }
         public int PostID { get; set; }
         public int UserID { get; set; }
+        public string FilePath { get; set; }
         public DateTime DateCommented { get; set; }
 
     }

@@ -29,9 +29,16 @@ namespace Project1.Repository.GenericRepository
 
         public virtual async Task<IEnumerable<TEntity>> Get(int pageNum, int pageSize)
         {
-            var entity = from e in dbSet.Skip(pageNum * pageSize).Take(pageSize)
-                         select e;
-            return entity;
+            if (pageNum == -1)
+            {
+                return dbSet.ToList();
+            }
+            else
+            {
+                var entity = from e in dbSet.Skip(pageNum * pageSize).Take(pageSize)
+                             select e;
+                return entity;
+            }
         }
 
         public virtual async Task<TEntity> GetByID(object id)
