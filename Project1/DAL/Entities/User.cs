@@ -18,8 +18,8 @@ namespace Project1.DAL.Entities
         public IEnumerable<FollowingRelationship> Followers { get; set; }
         public IEnumerable<Post> Statuses { get; set; }
         public IEnumerable<UserProfile> UserProfiles { get; set; }
-        // public IEnumerable<PostLike> PostLikes { get; set; }
-        // public IEnumerable<PostComment> PostComments { get; set; }
+        public IEnumerable<PostLike> PostLikes { get; set; }
+        public IEnumerable<PostComment> PostComments { get; set; }
 
     }
 }

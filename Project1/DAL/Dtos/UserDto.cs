@@ -19,8 +19,8 @@ namespace Project1.DAL.Dtos
         public IEnumerable<FollowingRelationshipDto> Followers { get; set; }
         public IEnumerable<PostDto> Statuses { get; set; }
         public IEnumerable<UserProfileDto> UserProfiles { get; set; }
-        // public IEnumerable<PostLikeDto> PostLikes { get; set; }
-        // public IEnumerable<PostCommentDto> PostComments { get; set; }
+        public IEnumerable<PostLikeDto> PostLikes { get; set; }
+        public IEnumerable<PostCommentDto> PostComments { get; set; }
 
     }
 }

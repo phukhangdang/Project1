@@ -44,12 +44,12 @@ namespace Project1
             {
                 mc.AddProfile(new MappingProfile());
             });
-
             IMapper mapper = mapperConfig.CreateMapper();
             services.AddSingleton(mapper);
 
             services.AddMvc();
             services.AddControllers();
+
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("project", new OpenApiInfo
                 {
@@ -63,10 +63,10 @@ namespace Project1
                     }
                 });
             });
-            // services.AddMvc();
+
             services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(
                 Configuration.GetConnectionString("DefaultConnection")));
-            // services.AddSingleton<DatabaseContext>();
+
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IPostService, PostService>();

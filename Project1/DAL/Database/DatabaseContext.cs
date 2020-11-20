@@ -26,5 +26,14 @@ namespace Project1.DAL.Database
             optionsBuilder.UseSqlServer(@"data source=DESKTOP-QQ4A2OU; initial catalog=Project1; persist security info=True; user id=sa; password=12;");
         }
         */
+        protected override void OnModelCreating(ModelBuilder modelbuilder)
+        {
+            foreach (var relationship in modelbuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
+            {
+                relationship.DeleteBehavior = DeleteBehavior.Restrict;
+            }
+
+            base.OnModelCreating(modelbuilder);
+        }
     }
 }
