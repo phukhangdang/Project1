@@ -13,7 +13,8 @@ namespace Project1.Repository.UnitOfWork
         IGenericRepository<Post> PostRepository { get; }
         IGenericRepository<PostLike> PostLikeRepository { get; }
         IGenericRepository<PostComment> PostCommentRepository { get; }
-        IGenericRepository<FollowingRelationship> FollowingRelationshipRepository { get; }
+        IGenericRepository<FollowerRelationship> FollowerRelationshipRepository { get; }
+        IGenericRepository<FollowedRelationship> FollowedRelationshipRepository { get; }
         IGenericRepository<UserProfile> UserProfileRepository { get; }
         IGenericRepository<PostCategory> PostCategoryRepository { get; }
         IGenericRepository<Category> CategoryRepository { get; }

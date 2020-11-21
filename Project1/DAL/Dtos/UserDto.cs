@@ -16,7 +16,8 @@ namespace Project1.DAL.Dtos
         public DateTime DateRegistered { get; set; }
         public string Role { get; set; }
         public string AccountStatus { get; set; }
-        public IEnumerable<FollowingRelationshipDto> Followers { get; set; }
+        public IEnumerable<FollowerRelationshipDto> Followers { get; set; }
+        public IEnumerable<FollowedRelationship> Followeds { get; set; }
         public IEnumerable<PostDto> Statuses { get; set; }
         public IEnumerable<UserProfileDto> UserProfiles { get; set; }
         public IEnumerable<PostLikeDto> PostLikes { get; set; }

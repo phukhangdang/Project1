@@ -16,7 +16,7 @@ namespace Project1.AutoMapper
             CreateMap<User, UserDto>();
             CreateMap<Post, PostDto>();
             CreateMap<PostLike, PostLikeDto>();
-            CreateMap<FollowingRelationship, FollowingRelationshipDto>();
+            CreateMap<FollowerRelationship, FollowerRelationshipDto>();
             CreateMap<PostComment, PostCommentDto>();
             CreateMap<PostCategory, PostCategoryDto>();
             CreateMap<Category, CategoryDto>();
@@ -26,7 +26,7 @@ namespace Project1.AutoMapper
             CreateMap<UserDto, User>();
             CreateMap<PostDto, Post>();
             CreateMap<PostLikeDto, PostLike>();
-            CreateMap<FollowingRelationshipDto, FollowingRelationship>();
+            CreateMap<FollowerRelationshipDto, FollowerRelationship>();
             CreateMap<PostCommentDto, PostComment>();
             CreateMap<CategoryDto, Category>();
             CreateMap<PostCategoryDto, PostCategory>();

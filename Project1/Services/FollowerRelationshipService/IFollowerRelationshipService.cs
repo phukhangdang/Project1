@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Project1.Services.FollowingRelationshipService
+namespace Project1.Services.FollowerRelationshipService
 {
-    public interface IFollowingRelationshipService : IBaseService<FollowingRelationship, FollowingRelationshipDto>
+    public interface IFollowerRelationshipService : IBaseService<FollowerRelationship, FollowerRelationshipDto>
     {
     }
 }

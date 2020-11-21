@@ -19,7 +19,8 @@ namespace Project1.DAL.Database
         public DbSet<PostComment> PostComments { get; set; }
         public DbSet<PostCategory> PostCategories { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<FollowingRelationship> FollowingRelationships { get; set; }
+        public DbSet<FollowerRelationship> FollowerRelationships { get; set; }
+        public DbSet<FollowedRelationship> FollowedRelationships { get; set; }
         /*
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

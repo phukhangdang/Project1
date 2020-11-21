@@ -15,7 +15,8 @@ namespace Project1.Repository.UnitOfWork
         public IGenericRepository<Post> PostRepository { get; private set; }
         public IGenericRepository<PostLike> PostLikeRepository { get; private set; }
         public IGenericRepository<PostComment> PostCommentRepository { get; private set; }
-        public IGenericRepository<FollowingRelationship> FollowingRelationshipRepository { get; private set; }
+        public IGenericRepository<FollowerRelationship> FollowerRelationshipRepository { get; private set; }
+        public IGenericRepository<FollowedRelationship> FollowedRelationshipRepository { get; private set; }
         public IGenericRepository<UserProfile> UserProfileRepository { get; private set; }
         public IGenericRepository<PostCategory> PostCategoryRepository { get; private set; }
         public IGenericRepository<Category> CategoryRepository { get; private set; }
@@ -33,7 +34,8 @@ namespace Project1.Repository.UnitOfWork
             PostRepository = new GenericRepository<Post>(dbContext);
             PostLikeRepository = new GenericRepository<PostLike>(dbContext);
             PostCommentRepository = new GenericRepository<PostComment>(dbContext);
-            FollowingRelationshipRepository = new GenericRepository<FollowingRelationship>(dbContext);
+            FollowerRelationshipRepository = new GenericRepository<FollowerRelationship>(dbContext);
+            FollowedRelationshipRepository = new GenericRepository<FollowedRelationship>(dbContext);
             UserProfileRepository = new GenericRepository<UserProfile>(dbContext);
             PostCategoryRepository = new GenericRepository<PostCategory>(dbContext);
             CategoryRepository = new GenericRepository<Category>(dbContext);

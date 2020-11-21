@@ -15,7 +15,8 @@ namespace Project1.DAL.Entities
         public DateTime DateRegistered { get; set; }
         public string Role { get; set; }
         public string AccountStatus { get; set; }
-        public IEnumerable<FollowingRelationship> Followers { get; set; }
+        public IEnumerable<FollowerRelationship> Followers { get; set; }
+        public IEnumerable<FollowedRelationship> Followeds { get; set; }
         public IEnumerable<Post> Statuses { get; set; }
         public IEnumerable<UserProfile> UserProfiles { get; set; }
         public IEnumerable<PostLike> PostLikes { get; set; }
