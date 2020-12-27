@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Project1.DAL.Dtos;
 using Project1.DAL.Entities;
+using Project1.Services.LoginService;
 using Project1.Services.UserService;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -16,9 +18,11 @@ namespace Project1.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
-        public UserController(IUserService userService)
+        private readonly ILoginService _loginService;
+        public UserController(IUserService userService, ILoginService loginService)
         {
             _userService = userService;
+            _loginService = loginService;
         }
 
         // GET: api/<UserController>
@@ -37,6 +41,7 @@ namespace Project1.Controllers
 
         // POST api/<UserController>
         [HttpPost]
+        // [EnableCors("AllowAll")]
         public async Task<UserDto> Post([FromBody] UserDto Dto)
         {
             return await _userService.CreateAsync(Dto);
@@ -55,5 +60,13 @@ namespace Project1.Controllers
         {
             await _userService.DeleteAsync(id);
         }
+
+        // GET LOGIN api/<UserController>/login
+        [Route("login"), HttpPut]
+        public async Task<UserDto> Login([FromBody] UserDto Dto)
+        {
+            return await _loginService.LoginAsync(Dto);
+        }
+
     }
 }

@@ -25,6 +25,8 @@ using Project1.Services.PostLikeService;
 using Project1.Services.PostService;
 using Project1.Services.UserProfileService;
 using Project1.Services.UserService;
+using Microsoft.AspNetCore.Server.IISIntegration;
+using Project1.Services.LoginService;
 
 namespace Project1
 {
@@ -78,12 +80,26 @@ namespace Project1
             services.AddScoped<IUserProfileService, UserProfileService>();
             services.AddScoped<IPostCategoryService, PostCategoryService>();
             services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<ILoginService, LoginService>();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllOrigins",
+                    builder =>
+                    {
+                        builder.AllowAnyHeader()
+                               .AllowAnyOrigin()
+                               .AllowAnyMethod();
+                    });
+            });
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DatabaseContext context)
         {
+            app.UseCors("AllOrigins");
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
